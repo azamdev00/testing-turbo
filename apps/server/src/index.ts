@@ -5,7 +5,7 @@ const app = express();
 app.get("/", (req, res, next) => {
   res.json({
     status: "success",
-    message: "Turborepo version 1.0.0....",
+    message: "Turborepo version 1.0.1....",
   });
 });
 

@@ -2,7 +2,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 
-name: Deploy to Amazon ECS
+name: Backend Deployment to ECS
 
 on:
   push:
@@ -47,9 +47,9 @@ jobs:
           IMAGE_TAG: latest
         run: |
           echo "Login : " >> ${{ steps.login-ecr.outputs.registry }}
-          docker build -f apps/server/Dockerfile -t $ECR_REGISTRY/f3m8i3o3/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/f3m8i3o3/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/f3m8i3o3/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          docker build -f apps/server/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def

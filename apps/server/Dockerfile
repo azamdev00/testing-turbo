@@ -39,4 +39,5 @@ WORKDIR /app
 USER expressjs
 COPY --from=installer /app .
 
+EXPOSE 8000
 CMD node apps/server/dist/index.js

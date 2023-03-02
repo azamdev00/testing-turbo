@@ -40,4 +40,5 @@ USER nextjs
 COPY --from=installer /app/apps/web/next.config.js .
 COPY --from=installer /app/apps/web/package.json .
 
+EXPOSE 3000
 CMD node apps/web/server.js

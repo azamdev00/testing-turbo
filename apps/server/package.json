@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node dist/index.js",
-    "dev": "src/index.ts --port 8000",
+    "dev": "nodemon src/index.ts --port 8000",
     "build": "tsc --project ./",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -17,8 +17,9 @@
     "@types/node": "^18.14.1",
     "eslint": "^8.34.0",
     "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "nodemon": "^2.0.21",
     "ts-node": "^10.9.1",
+    "tsconfig": "*",
     "typescript": "^4.9.5"
   },
   "dependencies": {
